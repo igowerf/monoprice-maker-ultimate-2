@@ -66,9 +66,9 @@ M140 S0 ; Disable heated bed
 M84 ; Turn steppers off
 ```
 
-![Printer Settings](https://raw.githubusercontent.com/igowerf/monoprice-maker-ultimate-2/mpmu2-readme/screenshots/machine-settings-printer-screenshot.png)
+![Printer Settings](assets/machine-settings-printer-screenshot.png)
 
-![Extruder Settings](https://raw.githubusercontent.com/igowerf/monoprice-maker-ultimate-2/mpmu2-readme/screenshots/machine-settings-extruder-screenshot.png)
+![Extruder Settings](assets/machine-settings-extruder-screenshot.png)
 
 ## Basic Print Settings
 
