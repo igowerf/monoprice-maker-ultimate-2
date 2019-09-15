@@ -1,4 +1,4 @@
-# MPMU2 Configuration
+# Monoprice Maker Ultimate 2 Configuration
 
 ### Disclaimer
 These are the settings that configurations that I've found to work for me so far.  **Use at your own risk.**  I've decided to share them here, because I haven't been able to find much information about these printers online yet.
