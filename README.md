@@ -87,3 +87,5 @@ M84 ; Turn steppers off
 | Retraction Speed         | 28             | Copied from the bundled Cura 3.3 Print Settings |
 | Combing Mode             | Not in Skin    |       |
 | Z Hop When Retracted     | false          | I turned this off, because it caused crazy stringing for me. |
+## Rebranding
+It may be of interest that the machine appears to be a WEEDO F150S (see http://www.weedo.ltd/?products=f150s). Some videos for the F150 show different bed leveling, so the S may indicate the addition of the inductive sensor.
