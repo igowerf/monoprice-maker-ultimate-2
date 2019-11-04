@@ -89,3 +89,9 @@ M84 ; Turn steppers off
 | Z Hop When Retracted     | false          | I turned this off, because it caused crazy stringing for me. |
 ## Rebranding
 It may be of interest that the machine appears to be a WEEDO F150S (see http://www.weedo.ltd/?products=f150s). Some videos for the F150 show different bed leveling, so the S may indicate the addition of the inductive sensor.
+## Communications
+Using Repetier Server, some lengthy prints would fail with a checksum error that never recovered. The symptom is log messages like "Error:checksum mismatch, Last Line:" and "Error:Line Number is not Last Line Number +1, Last Line"
+
+There seem to be two causes for this. First, Repetier claims that a buffer size of 63 will work with all known boards, it does not with this board. A buffer size of 48 seems to be working OK although I have not tried to push it back up. Baud of 115,200 is fine and ping pong does not help. It appears that when the machine gets a little behind and you send a long line (the line number adds several characters, as does the checksum) you get this error. Then the problem is the Repetier "scan" with M105 also bumps the line number, so line number recovery will probably never work (I will report this to Repetier). 
+
+TLDR: Set baud to 115,200 and buffer to 48.
