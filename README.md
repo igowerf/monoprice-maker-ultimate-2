@@ -89,6 +89,8 @@ M84 ; Turn steppers off
 | Z Hop When Retracted     | false          | I turned this off, because it caused crazy stringing for me. |
 ## Rebranding
 It may be of interest that the machine appears to be a WEEDO F150S (see http://www.weedo.ltd/?products=f150s). Some videos for the F150 show different bed leveling, so the S may indicate the addition of the inductive sensor. Other similiar machines: Weedo M2X or Weedo F152S (see http://www.weedo.ltd/?products=f152). These are not all totally the same since the F152S appears to have a different LCD, but the machines are very similar.
+## Firmware
+https://github.com/weedo3d/MonopriceUltimate2_Marlin - Note that both versions have hex files in the release folder.
 ## Communications
 Using Repetier Server, some lengthy prints would fail with a checksum error that never recovered. The symptom is log messages like "Error:checksum mismatch, Last Line:" and "Error:Line Number is not Last Line Number +1, Last Line"
 
