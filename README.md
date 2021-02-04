@@ -96,4 +96,31 @@ Using Repetier Server, some lengthy prints would fail with a checksum error that
 
 There seem to be two causes for this. First, Repetier claims that a buffer size of 63 will work with all known boards, it does not with this board. A buffer size of 48 seems to be working OK although I have not tried to push it back up. Baud of 115,200 is fine and ping pong does not help. It appears that when the machine gets a little behind and you send a long line (the line number adds several characters, as does the checksum) you get this error. Then the problem is the Repetier repeats the line once and then continues even if the line wasn't accepted. This has been reported to Repetier. 
 
-TLDR: Set baud to 115,200 and buffer to 48.
+With the 2020 firmware update this problem seems to be resolved.
+
+TLDR: Set baud to 115,200 and buffer to 48 unless using the 2020 firmware update.
+
+## Firmware update for Linux
+https://github.com/weedo3d/MonopriceUltimate2_Marlin
+
+I had the hex file in a file named MPU2-2.2.8.hex on a Raspberry Pi. You need to disconnect Octoprint/Repetier server/etc. If in doubt, try this:
+```
+picocom -b 115200 /dev/ttyUSB0
+```
+
+The port needs to be the port you think your printer is on. Enter:
+
+```
+M115<CONTROL-J>
+```
+
+You should see the firmware report. Control A+X to get out of picocom. If you don't get this, stop. You are on the wrong port/wrong printer/etc.
+
+
+
+Here's the command:
+```
+avrdude -D -v -b 115200 -P /dev/ttyUSB0 -p m2560 -c wiring -U flash:w:MPU2-2.2.8.hex:i
+```
+
+Obviously, your port and hex file is whatever they are. You can also use -U flash:r:backup.hex:i to backup your flash or use the word eeprom instead of flash to backup the eeprom.
